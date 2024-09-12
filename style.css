@@ -1,0 +1,197 @@
+:root {
+    --bg-col: #9C89B8;
+    --main-col: #564787;
+    --col-1: #B8BEDD;
+    --col-2: #cca7c5;
+    --book-text-color: #16131a;
+    --dialogue-text-color: #F2FDFF;
+    --dialogue-placeholder-color: black;
+}
+
+* {
+    font-family: Roboto, sans-serif !important;
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5vh;
+    gap: 1vh;
+    align-items: center;
+    background-color: var(--bg-col);
+}
+
+
+button {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    appearance: none;
+    width: fit-content;
+    background-color: var(--main-col);
+    color: white;
+}
+
+button:hover {
+    box-shadow: 3px 5px 10px rgba(230, 224, 224, 0.3);
+}
+
+button:active {
+    filter: brightness(0.9);
+}
+
+
+
+.books-container {
+    box-sizing: border-box;
+    width: 60%;
+    margin: 3% 5%;
+    padding: 3%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, clamp(8rem, 50%, 16rem));
+    grid-auto-rows: 16rem;
+    gap: 1rem;
+    justify-content: center;
+    align-content: start;
+    background-color: var(--main-col);
+    border-radius: 8px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: var(--col-1);
+    color: var(--book-text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    gap: .5rem;
+    justify-content: flex-start;
+    align-content: flex-start;
+    position: relative;
+
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.44);
+
+    .remove-book-button {
+        position: absolute;
+        background-color: rgba(255, 69, 0, 0.64);
+        top: .05rem;
+        right: .05rem;
+        font-size: .5rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: 0;
+        text-align: center;
+    }
+
+    .remove-book-button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.59);
+    }
+
+    .author, .title {
+        overflow: scroll;
+    }
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        overflow: auto;
+    }
+
+    .author {
+        font-size: 1rem;
+        font-weight: lighter;
+    }
+
+    .pages {
+        font-weight: 300;
+        font-size: .7rem;
+    }
+
+    .read-status {
+        font-weight: bolder;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
+        margin-top: auto;
+        flex-basis: auto;
+        flex-grow: .1;
+    }
+
+    .read-status:hover {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.30);
+        filter: brightness(.95);
+    }
+}
+
+.new-book-dialog {
+    border: none;
+    background-color: var(--col-2);
+    border-radius: 1rem;
+    padding: 0;
+    position: fixed;
+    bottom: 40%;
+    right: 0;
+    box-shadow: 0 0 10000000px 50vw rgba(0, 0, 0, 0.53);
+    filter: brightness(.95);
+
+    .dialogue-container {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        gap: 5px;
+        padding: .8rem;
+        color: black;
+
+        input {
+            background-color: var(--col-1);
+        }
+
+        input[type="text"], input[type="number"] {
+            font-size: 2rem;
+            appearance: none;
+            border: none;
+            border-radius: .5rem;
+            color: var(--dialogue-text-color);
+
+        }
+
+        input[type="text"]:hover, input[type="number"]:hover {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.29);
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.29);
+        }
+
+        input[type="checkbox"] {
+            accent-color: floralwhite;
+        }
+
+        button {
+            font-weight: bolder;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            padding: .5rem 1rem;
+            appearance: none;
+            width: fit-content;
+            background-color: var(--main-col);
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.34);
+        }
+
+    }
+
+
+}

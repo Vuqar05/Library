@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
+
+<template>
+    <div class="book">
+        <button class="remove-book-button">X</button>
+        <div class="title"></div>
+        <div class="author"></div>
+        <div class="pages"></div>
+        <div class="read-status"></div>
+    </div>
+</template>
+
 <body>
-<h1 class="abc"></h1>
+<button class="new-book-button">Add New Book</button>
+<div class="books-container"></div>
+<dialog class="new-book-dialog">
+    <div class="dialogue-container">
+        <button class="close-dialogue-button">X</button>
+        <label>
+            <input class="title-field" type="text" placeholder="Title" required>
+        </label>
+        <label>
+            <input class="author-field" type="text" placeholder="Author" required>
+        </label>
+        <label>
+            <input class="pages-field" type="number" min="1" max="10000" placeholder="1" required> <span>Pages</span>
+        </label>
+        <label>
+            <input class="read-field" type="checkbox" placeholder="Title" required>
+            Did you read this book?
+        </label>
+        <button type="button" class="submit-book-button">Add Book</button>
+    </div>
+
+
+
+</dialog>
 </body>
 </html>
