@@ -123,7 +123,7 @@ button:active {
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.10);
         margin-top: auto;
         flex-basis: auto;
-        flex-grow: .1;
+        padding: 1% 0;
     }
 
     .read-status:hover {
