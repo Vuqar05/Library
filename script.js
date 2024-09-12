@@ -71,7 +71,7 @@ function submitBook () {
     const title = titleField.value;
     const author = authorField.value;
     const pages = pagesField.value;
-    const isRead = readField.value;
+    const isRead = readField.checked;
 
     if (title && author && pages) {
         const book = new Book(title, author, pages, isRead)
